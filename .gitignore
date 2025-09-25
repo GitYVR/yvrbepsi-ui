@@ -18,6 +18,9 @@
 # misc
 .DS_Store
 *.pem
+yarn.lock
+pnpm-lock.yaml
+package-lock.json
 
 # debug
 npm-debug.log*
@@ -26,6 +29,8 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
+.env.production
 
 # vercel
 .vercel
@@ -33,3 +38,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# backup files
+*.backup
+*.bak
+*~
