@@ -13,7 +13,7 @@ const chains: { [key: string]: Chain } = {
     label: "Base",
     rpcUrl: "https://base.llamarpc.com",
     logoURI:
-      "https://github.com/base-org/brand-kit/raw/main/logo/in-product/Base_Network_Logo.svg",
+      "https://static.debank.com/image/chain/logo_url/base/ccc1513e4f390542c4fb2f4b88ce9579.png",
   },
   "0xa": {
     id: "0xa",
@@ -38,6 +38,14 @@ const chains: { [key: string]: Chain } = {
     rpcUrl: "https://arbitrum.llamarpc.com",
     logoURI:
       "https://arbiscan.io/assets/arbitrum/images/svg/logos/token-secondary-light.svg?v=24.9.2.0",
+  },
+  "0x3e7": {
+    id: "0x3e7",
+    token: "HYPE",
+    label: "Hyper EVM",
+    rpcUrl: "https://rpc.hyperliquid.xyz/evm",
+    logoURI:
+      "https://static.debank.com/image/hyper_token/logo_url/hyper/0b3e288cfe418e9ce69eef4c96374583.png",
   },
   "0x65": {
     id: "0x65",

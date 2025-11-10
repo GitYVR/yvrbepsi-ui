@@ -89,6 +89,28 @@ const tokens: { [key: string]: Token[] } = {
       coinKey: "USDC",
     },
   ],
+  "0x3e7": [
+    {
+      address: "0xb88339CB7199b77E23DB6E890353E22632Ba630f",
+      chainId: "0x3e7",
+      symbol: "USDC",
+      decimals: 6,
+      name: "USDC",
+      logoURI:
+        "https://static.debank.com/image/coin/logo_url/usdc/e87790bfe0b3f2ea855dc29069b38818.png",
+      coinKey: "USDC",
+    },
+    {
+      address: "0xB8CE59FC3717ada4C02eaDF9682A9e934F625ebb",
+      chainId: "0xa4b1",
+      symbol: "USDT0",
+      decimals: 6,
+      name: "Tether USD",
+      logoURI:
+        "https://static.debank.com/image/ink_token/logo_url/0x0200c29006150606b650577bbe7b6248f58470c1/8bba37fddc2774e06a94b8952e3e3ad7.png",
+      coinKey: "USDT",
+    },
+  ],
 };
 
 export default tokens;
