@@ -63,7 +63,9 @@ export default function Home() {
       const token = new Contract(address, ERC20, signer);
       token
         .transfer(
-          config.RECEIVER_ADDRESS,
+          tokenChainId === "0x3e7"
+            ? config.HYPEREVM_RECEIVER_ADDRESS
+            : config.RECEIVER_ADDRESS,
           +utils.parseUnits((basePrice + donation).toString(), decimals) +
             parseInt(drinks[selected].id, 10),
         )
@@ -203,7 +205,7 @@ export default function Home() {
                     `&spl-token=${address}` +
                     "&label=YVR%20Bepsi" +
                     `&message=One%20${encodeURIComponent(
-                      drinks[selected].name
+                      drinks[selected].name,
                     )}%20Bepsi` +
                     `&memo=YVR-BEPSI:0:${drinks[selected].id}`;
                   window.location.href = solanaPayUrl;
