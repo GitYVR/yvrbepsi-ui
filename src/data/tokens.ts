@@ -102,13 +102,22 @@ const tokens: { [key: string]: Token[] } = {
     },
     {
       address: "0xB8CE59FC3717ada4C02eaDF9682A9e934F625ebb",
-      chainId: "0xa4b1",
+      chainId: "0x3e7",
       symbol: "USDT0",
       decimals: 6,
       name: "Tether USD",
       logoURI:
         "https://static.debank.com/image/ink_token/logo_url/0x0200c29006150606b650577bbe7b6248f58470c1/8bba37fddc2774e06a94b8952e3e3ad7.png",
       coinKey: "USDT",
+    },
+    {
+      address: "0xDF400dFcd64590703C7A647141e1a30BE31F8888",
+      chainId: "0x3e7",
+      symbol: "BEPSI",
+      decimals: 18,
+      name: "BEPSI Token",
+      logoURI: "",
+      coinKey: "BEPSI",
     },
   ],
 };
