@@ -6,6 +6,7 @@ interface Config {
   MAX_PRICE_IMPACT: number;
   ORDER: "RECOMMENDED" | "CHEAPEST";
   NATIVE_TOKENS: `0x${string}`[];
+  HYPEREVM_RECEIVER_ADDRESS: string;
   SOLANA_TREASURY_ADDRESS: string;
   TARGET_CHAIN: number;
   TARGET_TOKEN: string;
