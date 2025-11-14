@@ -116,7 +116,7 @@ const tokens: { [key: string]: Token[] } = {
       symbol: "BEPSI",
       decimals: 18,
       name: "BEPSI Token",
-      logoURI: "",
+      logoURI: "./favicon-32x32.png",
       coinKey: "BEPSI",
     },
   ],

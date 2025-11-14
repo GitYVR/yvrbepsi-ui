@@ -66,8 +66,9 @@ export default function Home() {
           tokenChainId === "0x3e7"
             ? config.HYPEREVM_RECEIVER_ADDRESS
             : config.RECEIVER_ADDRESS,
-          +utils.parseUnits((basePrice + donation).toString(), decimals) +
-            parseInt(drinks[selected].id, 10),
+          BigNumber.from(
+            utils.parseUnits((basePrice + donation).toString(), decimals),
+          ).add(parseInt(drinks[selected].id, 10)),
         )
         .then(async (tx: any) => {
           await tx.wait();
