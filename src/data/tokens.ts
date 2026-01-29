@@ -119,6 +119,18 @@ const tokens: { [key: string]: Token[] } = {
       logoURI: "./favicon-32x32.png",
       coinKey: "BEPSI",
     },
+  ],
+  "0x1012": [
+    {
+      address: "0x8D82c4E3c936C7B5724A382a9c5a4E6Eb7aB6d5D",
+      chainId: "0x1012",
+      symbol: "ctUSD",
+      decimals: 6,
+      name: "Citrea USD",
+      logoURI:
+        "https://assets.coingecko.com/coins/images/71615/standard/ctusd-logo.jpg",
+      coinKey: "ctUSD",
+    },
     {
       address: "0x5BB078C8aC361be88A27195307138A678562D281",
       chainId: "0x1012",
