@@ -4,6 +4,7 @@ export interface Chain {
   label: string;
   rpcUrl: string;
   logoURI: string;
+  receiverAddress?: string;
 }
 
 const chains: { [key: string]: Chain } = {
@@ -46,6 +47,7 @@ const chains: { [key: string]: Chain } = {
     rpcUrl: "https://rpc.hyperliquid.xyz/evm",
     logoURI:
       "https://static.debank.com/image/hyper_token/logo_url/hyper/0b3e288cfe418e9ce69eef4c96374583.png",
+    receiverAddress: "0xD5184c0d23f7551DB7c8c4a3a3c5F1685059A09c",
   },
   "0x65": {
     id: "0x65",
@@ -53,6 +55,14 @@ const chains: { [key: string]: Chain } = {
     label: "Solana",
     rpcUrl: "https://api.mainnet-beta.solana.com",
     logoURI: "/solanaLogoMark.svg",
+  },
+  "0x1012": {
+    id: "0x1012",
+    token: "cBTC",
+    label: "Citrea",
+    rpcUrl: "https://rpc.mainnet.citrea.xyz",
+    logoURI: "https://icons.llamao.fi/icons/chains/rsz_citrea",
+    receiverAddress: "0xD5184c0d23f7551DB7c8c4a3a3c5F1685059A09c",
   },
 };
 

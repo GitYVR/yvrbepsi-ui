@@ -23,6 +23,7 @@ export default function Home() {
   const [address, setAddress] = useState<string>();
   const [decimals, setDecimals] = useState<number>();
   const [tokenChainId, setTokenChainId] = useState<string>();
+  const [receiverAddress, setReceiverAddress] = useState<string>();
   const [tokenBalance, setTokenBalance] = useState<BigNumber>();
   const [pending, setPending] = useState(false);
   const [basePrice, setBasePrice] = useState(1);
@@ -50,7 +51,8 @@ export default function Home() {
       connectedChain !== undefined &&
       connectedChain !== null &&
       tokenChainId !== undefined &&
-      setChain !== undefined
+      setChain !== undefined &&
+      receiverAddress !== undefined
     ) {
       setPending(true);
       if (connectedChain.id !== tokenChainId) {
@@ -63,9 +65,7 @@ export default function Home() {
       const token = new Contract(address, ERC20, signer);
       token
         .transfer(
-          tokenChainId === "0x3e7"
-            ? config.HYPEREVM_RECEIVER_ADDRESS
-            : config.RECEIVER_ADDRESS,
+          receiverAddress,
           BigNumber.from(
             utils.parseUnits((basePrice + donation).toString(), decimals),
           ).add(parseInt(drinks[selected].id, 10)),
@@ -88,6 +88,7 @@ export default function Home() {
     setChain,
     donation,
     basePrice,
+    receiverAddress,
   ]);
 
   useEffect(() => {
@@ -168,10 +169,11 @@ export default function Home() {
           <p className="text-xl py-2">Choose a payment:</p>
           <Dropdown
             options={[]}
-            setToken={(address, decimals, chainId) => {
+            setToken={(address, decimals, chainId, receiverAddress) => {
               setAddress(address);
               setDecimals(decimals);
               setTokenChainId(chainId);
+              setReceiverAddress(receiverAddress);
             }}
           />
           {tokenBalance && (
