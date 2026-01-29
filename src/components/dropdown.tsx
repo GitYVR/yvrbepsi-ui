@@ -1,9 +1,8 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useSetChain } from "@web3-onboard/react";
 
 import dropdown from "@/assets/dropdown.svg";
-import { useWallets } from "@web3-onboard/react";
 import config from "@/constants";
 import tokens, { Token } from "@/data/tokens";
 import chains, { Chain } from "@/data/chains";
@@ -14,7 +13,12 @@ interface TokenWithChain extends Token {
 
 interface Props {
   options: TokenWithChain[];
-  setToken: (token: string, decimals: number, chainId: string) => void;
+  setToken: (
+    token: string,
+    decimals: number,
+    chainId: string,
+    receiverAddress: string,
+  ) => void;
 }
 
 function NativeOption({ symbol, logoURI, chain }: TokenWithChain) {
@@ -51,7 +55,12 @@ export default function Dropdown({ options, setToken }: Props) {
 
   useEffect(() => {
     if (selected && setToken) {
-      setToken(selected.address, selected.decimals, selected.chain.id);
+      setToken(
+        selected.address,
+        selected.decimals,
+        selected.chain.id,
+        selected.chain.receiverAddress || config.RECEIVER_ADDRESS,
+      );
     }
     if (selected && connectedChain && connectedChain.id !== selected.chain.id) {
       setChain({ chainId: selected.chain.id.toString() });
